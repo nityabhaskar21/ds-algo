@@ -1,4 +1,5 @@
 .vscode/tasks.json
-*/*.exe
+**/*.exe
 .vscode/launch.json
 .vscode/settings.json
+

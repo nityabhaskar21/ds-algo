@@ -51,16 +51,66 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
+
+struct Node {
+    struct Node *left, *right;
+    int data;
+
+};
+
+Node* newNode(int data) {
+    Node *t = new Node();
+    t->left=t->right=NULL; t->data=data;
+    t->data=data;
+    return t;
+}
+
+void print(Node *root) {
+    if (root == NULL) return;
+
+    print(root->left); 
+    cout<<root->data<<" ";
+    print(root->right); 
+}
  
 
 int main()
 {
     fast_cin();
 
-    #ifndef ONLINE_JUDGE
-       freopen("input.txt", "r", stdin);
-       freopen("output.txt", "w", stdout);
-    #endif
+    // #ifndef ONLINE_JUDGE
+    //    freopen("input.txt", "r", stdin);
+    //    freopen("output.txt", "w", stdout);
+    // #endif
+
+    int t, x;
+    cin >> t >> x;
+    Node *root = newNode(x);
+
+    int val = 0;
+    string path = "";
+    Node* tmp = root;
+
+    for (int i = 0; i < t-1; i++) {
+        cin>>path>>val;
+        for (int j = 0; j < path.size()-1; j++) {
+            if (path[j] == 'L') {
+                tmp = tmp->left;
+            } else if (path[j] == 'R') {
+                tmp = tmp->right;
+            }
+        }
+        if (path[path.size()-1] == 'L') {
+            tmp->left = newNode(val); 
+        } else if (path[path.size()-1] == 'R') {
+            tmp->right = newNode(val);
+        }
+        
+        tmp=root;
+    }
+    // print(root);
+
+
 
     return 0;
 }
