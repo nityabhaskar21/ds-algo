@@ -1,6 +1,6 @@
 {
 	"C++ Snippet": {
-		"prefix": "NodeTree",
+		"prefix": "node-tree",
 		"body": [
 			"struct Node {",
 			"    Node* left;",
