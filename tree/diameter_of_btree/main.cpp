@@ -52,6 +52,8 @@ double eps = 1e-12;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
+// ACCEPTED
+
 struct Node {
     struct Node *left, *right;
     int data;
@@ -72,6 +74,31 @@ void print(Node *root) {
     cout<<root->data<<" ";
     print(root->right); 
 }
+
+v32 diameters;
+
+int childHeight(Node *root) {
+    if (root == NULL) return 0;
+    if (root->left == NULL && root->right == NULL) return 1;
+
+    int leftHeight = childHeight(root->left);
+    int rightHeight = childHeight(root->right);
+
+    int currDiameter = 0;
+    currDiameter = leftHeight + rightHeight + 1;
+    diameters.push_back(currDiameter);
+
+    return max(leftHeight+1, rightHeight+1);
+}
+
+int findDiameter(Node *root) {
+    if (root == NULL) return 0;
+    if (root->left == NULL && root->right == NULL) return 1;
+
+    childHeight(root);
+
+    return *max_element(diameters.begin(), diameters.end());
+}
  
 
 int main()
@@ -79,8 +106,8 @@ int main()
     fast_cin();
 
     // #ifndef ONLINE_JUDGE
-    //    freopen("input.txt", "r", stdin);
-    //    freopen("output.txt", "w", stdout);
+    //    freopen("E:\\ds-algo\\utility\\input.txt", "r", stdin);
+    //    freopen("E:\\ds-algo\\utility\\output.txt", "w", stdout);
     // #endif
 
     int t, x;
@@ -93,24 +120,35 @@ int main()
 
     for (int i = 0; i < t-1; i++) {
         cin>>path>>val;
-        for (int j = 0; j < path.size()-1; j++) {
-            if (path[j] == 'L') {
+        for (int j = 0; j <= path.size()-1; j++) {
+            if (path[j] == 'L' && tmp->left!=NULL) {
                 tmp = tmp->left;
-            } else if (path[j] == 'R') {
+            } else if (path[j] == 'L' && tmp->left==NULL) {
+                Node *t = new Node();
+                tmp->left = t;
+                tmp = tmp->left;
+            } else if (path[j] == 'R' && tmp->right!=NULL) {
+                tmp = tmp->right;
+            } else if (path[j] == 'R' && tmp->right==NULL) {
+                Node *t = new Node();
+                tmp->right = t;
                 tmp = tmp->right;
             }
         }
-        if (path[path.size()-1] == 'L') {
-            tmp->left = newNode(val); 
-        } else if (path[path.size()-1] == 'R') {
-            tmp->right = newNode(val);
-        }
+        tmp->data = val;
+        // if (path[path.size()-1] == 'L') {
+        //     tmp->left = newNode(val); 
+        // } else if (path[path.size()-1] == 'R') {
+        //     tmp->right = newNode(val);
+        // }
         
         tmp=root;
     }
+
     // print(root);
-
-
+    cout<<findDiameter(root) ;
+    // delete root;
+    // delete tmp;
 
     return 0;
 }
