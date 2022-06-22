@@ -52,7 +52,28 @@ double eps = 1e-12;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
+struct Node{
+    struct Node *left, *right;
+    int data;
+};
+ 
+Node* newNode(int data) {
+    struct Node *tmp = new Node();
+    tmp->data = data;
+    tmp->left = NULL;
+    tmp->right = NULL;
+    return tmp;
+}
 
+int maxDepth(Node *node) {
+    if (node == NULL) return 0;
+
+    int leftDepth = maxDepth(node->left);
+    int rightDepth = maxDepth(node->right);
+
+    int maxDepth = max(leftDepth+1, rightDepth+1);
+    return maxDepth;
+}
 
 
 int main()
@@ -63,6 +84,14 @@ int main()
     //    freopen("input.txt", "r", stdin);
     //    freopen("output.txt", "w", stdout);
     // #endif
+
+    struct Node* root = newNode(1);
+    root->left = newNode(2);
+    root->right = newNode(3);
+    root->left->left = newNode(4);
+    root->left->right = newNode(5);
+
+    cout<<"Max Depth: "<<maxDepth(root)<<endl;
 
     return 0;
 }
