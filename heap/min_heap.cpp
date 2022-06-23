@@ -62,5 +62,27 @@ int main()
     //    freopen("output.txt", "w", stdout);
     // #endif
 
+
+    // priority_queue<type, vector<type>, greater<type>> pq; 
+    priority_queue<int, vector<int>, greater<int>> pq; 
+
+
+    // Methods	Description
+    // push()	inserts the element into the priority queue
+    // pop()	removes the element with the highest priority
+    // top()	returns the element with the highest priority
+    // size()	returns the number of elements
+    // empty()	returns true if the priority_queue is empty
+
+    pq.push(5);
+    pq.push(7);
+    pq.push(2);
+    pq.push(9);
+
+    while(!pq.empty()) {
+        cout << pq.top() << ", ";   
+        pq.pop();
+    }   
+
     return 0;
 }
