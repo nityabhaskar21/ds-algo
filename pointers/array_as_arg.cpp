@@ -35,7 +35,7 @@ int sumUsingArrayArgWithReference(int (&A)[8]) {
 
     int i, sum = 0;
     int size = sizeof(A)/sizeof(A[0]);
-    cout<<"Size of array when passed as fun arg in sumUsingArrayArgWithSize: "<<size<<endl;
+    cout<<"Size of array when passed as fun arg in sumUsingArrayArgWithReference: "<<size<<endl;
     for (i=0; i<size; i++) {
         sum += A[i];
     }
