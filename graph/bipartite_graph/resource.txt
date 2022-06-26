@@ -1,0 +1,12 @@
+A graph G=(V, E) is called a bipartite graph 
+if its vertices V can be partitioned into two subsets V1 and V2 
+such that each edge of G connects a vertex of V1 to a vertex V2. 
+
+It is denoted by Kmn, where m and n are the numbers of vertices in V1 and V2 respectively.
+
+- We can divide all vertices of graph G into two subsets V1 and V2
+- such that all edges of graph are from V1 to V2 and vice-versa.
+- also called two coloring problem
+
+
+https://www.educative.io/answers/what-is-a-bipartite-graph
