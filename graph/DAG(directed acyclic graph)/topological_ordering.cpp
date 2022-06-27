@@ -1,5 +1,7 @@
 #include <iostream>
 #include <list>
+#include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -17,6 +19,43 @@ class Graph {
             l[x].push_back(y);
         }
 
+        void topologicalSort(int src) {
+            vector<int> inEdges(V, 0);
+            vector<bool> visited(V, 0);
+           
+
+            for (int i = 0; i < V; i++) {
+                for (auto nbr: l[i]) {
+                    inEdges[nbr]++;
+                }
+            }            
+
+            queue<int> q;
+            vector<int> traversedOrder;
+            q.push(src);
+
+            while (!q.empty()) {
+                int front = q.front();
+                visited[front] = true;
+                q.pop();
+
+                for (auto nbr: l[front]) {
+                    inEdges[nbr]--;
+                    q.push(nbr);
+
+                    if (inEdges[nbr] == 0) {
+                        traversedOrder.push_back(nbr);
+                    }
+                }
+            }
+
+            cout<<"Possible topoligal order: \n";
+            for (auto i: traversedOrder) {
+                cout<<i<<" ";
+            }
+
+        }
+
 };
 
 int main() {
@@ -29,7 +68,8 @@ int main() {
     g.addEdge(1, 4);
     g.addEdge(1, 2);
 
-
+    g.topologicalSort(0);
+    // cout<<"hi";
 
     return 0;
 }
