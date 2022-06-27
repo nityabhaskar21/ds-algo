@@ -19,7 +19,7 @@ class Graph {
             l[x].push_back(y);
         }
 
-        void topologicalSort(int src) {
+        void topologicalSort() {
             vector<int> inEdges(V, 0);
             vector<bool> visited(V, 0);
            
@@ -28,11 +28,17 @@ class Graph {
                 for (auto nbr: l[i]) {
                     inEdges[nbr]++;
                 }
-            }            
-
+            }       
             queue<int> q;
             vector<int> traversedOrder;
-            q.push(src);
+
+            for (int i = 0; i < V; i++) {
+                if (inEdges[i] == 0) {
+                    q.push(i);
+                    visited[i] = true;
+                    traversedOrder.push_back(i);
+                }
+            }     
 
             while (!q.empty()) {
                 int front = q.front();
@@ -41,8 +47,10 @@ class Graph {
 
                 for (auto nbr: l[front]) {
                     inEdges[nbr]--;
-                    q.push(nbr);
-
+                    if (!visited[nbr]) {
+                        q.push(nbr);
+                    }
+                    
                     if (inEdges[nbr] == 0) {
                         traversedOrder.push_back(nbr);
                     }
@@ -55,7 +63,6 @@ class Graph {
             }
 
         }
-
 };
 
 int main() {
@@ -68,7 +75,7 @@ int main() {
     g.addEdge(1, 4);
     g.addEdge(1, 2);
 
-    g.topologicalSort(0);
+    g.topologicalSort();
     // cout<<"hi";
 
     return 0;
