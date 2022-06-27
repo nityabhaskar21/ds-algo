@@ -19,6 +19,7 @@ class Graph {
             l[x].push_back(y);
         }
 
+        // Also called Kahn's algorithm
         void topologicalSort() {
             vector<int> inEdges(V, 0);
             vector<bool> visited(V, 0);
