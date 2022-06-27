@@ -3,7 +3,7 @@
 using namespace std;
 
 int sumUsingArrayArg(int A[]) {  //Here we pass the array as reference only. We dont know the size at ths point
-    // Similar to int * A
+    // Similar to int *A
     // So for using this way we have also to provide the size of array as arg.
     int i, sum = 0;
 
@@ -15,6 +15,10 @@ int sumUsingArrayArg(int A[]) {  //Here we pass the array as reference only. We 
     for (i=0; i<size; i++) {
         sum += A[i];
     }
+
+    // But A[i] will still give correct value if i < size of array
+    cout<<"Element at index 6: "<<A[6]<<endl;
+
     return sum;
 }
 
