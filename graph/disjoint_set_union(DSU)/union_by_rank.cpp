@@ -25,13 +25,43 @@ class Graph {
         }
 
         //Union
-        void unionSet(int x, int y, int parent[]) {
+        void unionSet(int x, int y, int parent[], int rank[]) {
+            int s1 = findSet(x, parent);
+            int s2 = findSet(y, parent);
+
+            if (s1!=s2) {
+                if (rank[s1]>rank[s2]) {
+                    parent[s2] = s1;
+                    rank[s1]+=s2;
+                } else {
+                    parent[s1] = s2;
+                    rank[s2]+=s1;
+                }
+            }
          
         }
 
         bool containsCycle () {
             // DSU logic to check if graph contains cycle or not
-           
+            int parent[V];
+            int rank[V];
+
+            for (int i = 0; i < V; i++) {
+                parent[i] = -1;
+                rank[i] = 1;
+            }
+
+            for (auto edge: edgeList) {
+                int s1 = findSet(edge.first, parent);
+                int s2 = findSet(edge.second, parent);
+
+                if (s1!=s2) {
+                    unionSet(s1, s2, parent, rank);
+                } else {
+                    return true;
+                }
+            }
+           return false;
         }
 
 };
