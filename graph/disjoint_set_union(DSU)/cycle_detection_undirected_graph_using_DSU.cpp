@@ -23,7 +23,7 @@ class Graph {
             }
             else return findSet(parent[x], parent);
         }
-
+ 
         //Union
         void unionSet(int x, int y, int parent[]) {
             int s1 = findSet(x, parent);
