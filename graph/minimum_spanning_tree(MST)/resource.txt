@@ -3,3 +3,8 @@ MST:- Given a connected, undirected and weighted graph G, select a subset of edg
     - Popular algorithms:-
         - Prim's algorithm
         - Kruskal's algorithm
+
+    - Prim's algorithm uses greedy algorithm and priority_queue
+
+    - Kruskal's algorithm uses greedy algorithm, 
+        stores graph as edge list. DSU for detecting cycle and O(ElogV) complexity.
