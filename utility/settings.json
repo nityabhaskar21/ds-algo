@@ -1,0 +1,22 @@
+{
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "tabnine.experimentalAutoImports": true,
+    "code-runner.runInTerminal": true,
+    "glassit.alpha": 235,
+    "terminal.integrated.fontWeightBold": "bold",
+    "editor.fontFamily": "Fira Code Retina",
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.fontWeight": "450",
+    "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+    "editor.fontSize": 12,
+    "editor.cursorWidth": 3,
+    "editor.cursorSurroundingLinesStyle": "all",
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ffff00",
+        "terminalCursor.foreground": "#ffff00"
+    }
+    
+}
