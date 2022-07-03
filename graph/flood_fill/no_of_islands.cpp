@@ -52,7 +52,8 @@ double eps = 1e-12;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-vector<vector<int>> vec;
+vector<vector<int>> grid;
+vector<vector<int>> visited;
 
 int main()
 {
@@ -65,13 +66,24 @@ int main()
 
     int n, m;
     cin>>n>>m;
-    vec.resize(n, vector<int>(m, 0));
+    grid.resize(n, vector<int>(m, 0));
+    visited.resize(n, vector<int>(m, 0));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            cin>>vec[i][j];
+            cin>>grid[i][j];
         }
     }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (grid[i][j] == 1 && !visited[i][j]) {
+                
+            }
+        }
+    }
+
+
 
     return 0;
 }
