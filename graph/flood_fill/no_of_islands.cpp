@@ -54,6 +54,22 @@ double eps = 1e-12;
 
 vector<vector<int>> grid;
 vector<vector<int>> visited;
+int n, m;
+
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, -1, 0, 1};
+
+void flood_fill(int x, int y) {
+    visited[x][y] = 1;
+    for (int i = 0; i < 4; i++) {
+        int xx = x+dx[i];
+        int yy = y+dy[i];
+
+        if (xx >= 0 && yy >= 0 && xx < n && yy < m && grid[xx][yy] == 1 && visited[xx][yy] == 0) {
+            flood_fill(xx, yy);
+        }
+    }
+}
 
 int main()
 {
@@ -64,7 +80,7 @@ int main()
        freopen("output.txt", "w", stdout);
     #endif
 
-    int n, m;
+    
     cin>>n>>m;
     grid.resize(n, vector<int>(m, 0));
     visited.resize(n, vector<int>(m, 0));
@@ -74,16 +90,17 @@ int main()
             cin>>grid[i][j];
         }
     }
-
+    int count = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (grid[i][j] == 1 && !visited[i][j]) {
-                
+                count++;
+                flood_fill(i, j);
             }
         }
     }
 
-
+    cout<<count;
 
     return 0;
 }
