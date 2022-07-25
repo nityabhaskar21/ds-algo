@@ -14,8 +14,8 @@ int main() {
     int a = 10;
     printBinary(a);
 
-    // set the 2nd bit from right
-    printBinary( a | (1<<2));
+    // toggle the 2nd bit from right
+    printBinary( a ^ (1<<2));
 
     return 0;
 }
