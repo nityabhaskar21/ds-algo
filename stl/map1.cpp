@@ -63,7 +63,8 @@ int main()
     // #endif
     unordered_map<int, string> m1;
     m1.insert({6, "abc"});  
-    m1[2] = "def";          
+    m1[2] = "def"; 
+    m1[9];  // Here it will be empty string, auto initialized.          
 
     for (auto &e: m1) {
         cout<<e.first<<" "<<e.second<<endl;
