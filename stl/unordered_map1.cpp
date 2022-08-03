@@ -62,8 +62,8 @@ int main()
     //    freopen("output.txt", "w", stdout);
     // #endif
     unordered_map<int, string> m1;
-    m1.insert({6, "abc"});  
-    m1[2] = "def"; 
+    m1.insert({6, "abc"});  //O(1)
+    m1[2] = "def";          //O(1)
     m1[9];  // Here it will be empty string, auto initialized.          
 
     for (auto &e: m1) {
@@ -75,6 +75,11 @@ int main()
     for (it = m1.begin(); it!=m1.end(); it++) {
         cout<<(*it).first <<" "<< it->second<<endl;
         // Here (*it).first === it->first
+    }
+
+    auto it1 = m1.find(2); //O(1)
+    if (it1!= m1.end()) {
+        cout<<"found: "<<it1->first<<" "<<it1->second<<endl;
     }
 
 
