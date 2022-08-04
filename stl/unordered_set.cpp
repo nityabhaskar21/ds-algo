@@ -62,20 +62,23 @@ int main()
     //    freopen("output.txt", "w", stdout);
     // #endif
 
-    set<int> s1;
+    unordered_set<int> s1;
 
-    s1.insert(4);   //logN beacuse it is self balncing tree
-    s1.insert(9);   //Automatically sorted using red black tree.
-    s1.insert(2); 
+    s1.insert(7);   //O(1)
+    s1.insert(2);
+    s1.insert(9);
+    s1.insert(4);
 
     for (auto &e: s1) {
-        cout<<e<<" ";
+        cout << e <<" ";
     }
 
-    auto it = s1.find(4); //logN
+    auto it = s1.find(4); //O(1)
+
     if (it != s1.end()) {
         cout<<endl<<*it;
     }
+   
 
     return 0;
 }
