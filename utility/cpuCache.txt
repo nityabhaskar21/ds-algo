@@ -1,0 +1,28 @@
+Why use 
+
+1≤n≤1000
+1≤x≤10^5
+
+vector<vector<int>> t(n+1, vector<int>(x+1, 0)) instead of vector<vector<int>> t(x+1, vector<int>(n+1, 0)) ???
+
+https://stackoverflow.com/questions/16699247/what-is-a-cache-friendly-code
+
+
+for (i = 0 to size)
+  for (j = 0 to size)
+    do something with ary[i][j]
+
+will run faster than the following:
+
+for (i = 0 to size)
+  for (j = 0 to size)
+    do something with ary[j][i]    
+
+The reason this is cache inefficient is because 
+modern CPUs will load the cache line with "near" memory addresses from main memory 
+when you access a single memory address. We are iterating through the "j" (outer) rows in the array in the inner loop, 
+so for each trip through the inner loop, 
+the cache line will cause to be flushed and loaded with a line of addresses that are near to the [j][i] entry. 
+
+
+https://stackoverflow.com/questions/763262/how-does-one-write-code-that-best-utilizes-the-cpu-cache-to-improve-performance
