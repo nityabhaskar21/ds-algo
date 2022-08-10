@@ -1,5 +1,5 @@
 MST:- Given a connected, undirected and weighted graph G, select a subset of edges E, 
-      such that graph G is connected toand total weight of connected edges E is minimum.    
+      such that graph G is connected to and total weight of connected edges E is minimum.    
     - Popular algorithms:-
         - Prim's algorithm
         - Kruskal's algorithm
