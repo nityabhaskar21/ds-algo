@@ -33,6 +33,7 @@ class Graph {
         }
 
         // shortest path for each vertex from src in graph using BFS technique.
+        // Here we have unweighted graph. So weight of each vertex is considered 1.
         void shortestPath(int src) {
             queue<int> q;
             bool *visited = new bool[V]{0};
