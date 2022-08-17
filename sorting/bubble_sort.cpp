@@ -55,6 +55,7 @@ double eps = 1e-12;
 // Bubble sort is based on the idea of repeatedly comparing pairs of adjacent elements and 
 // then swapping their positions if they exist in the wrong order.
 
+
 void bubble_sort(int A[ ], int n ) {
     int temp;
     for(int k = 0; k< n-1; k++) {
@@ -70,6 +71,9 @@ void bubble_sort(int A[ ], int n ) {
         }
     }
 }
+
+// The above function always runs O(n^2) time even if the array is sorted.
+// It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap. 
  
 
 int main()
