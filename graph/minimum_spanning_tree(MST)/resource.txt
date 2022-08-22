@@ -16,7 +16,23 @@ MST:- Given a connected, undirected and weighted graph G, select a subset of edg
         - Prim's algorithm
         - Kruskal's algorithm
 
-    - Prim's algorithm uses greedy algorithm and priority_queue
+Prim's algorithm :-
+    -Weighted undirected Graph
+    -greedy algorithm
+    -priority_queue
 
-    - Kruskal's algorithm uses greedy algorithm, 
-        stores graph as edge list. DSU for detecting cycle and O(ElogV) complexity.
+    Terms:-
+    -MST set = []
+    -Active Edge = edge from a vertex in MST set to V.
+    -MST Edge = an edge that has been included in MST so far.
+
+    Algorithm:
+    1. Start from any source vertex say X.
+    2. Out of all active edgeg, pick the one with smallest weight say X to Y.
+        - select in Y in MST
+        - add edges starting form Y in the active edge list.
+    3. Repeat the 2nd step till MST is complete.
+        
+
+Kruskal's algorithm uses greedy algorithm, 
+    stores graph as edge list. DSU for detecting cycle and O(ElogV) complexity.
