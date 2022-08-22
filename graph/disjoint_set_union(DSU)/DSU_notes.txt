@@ -1,0 +1,19 @@
+A disjoint-set data structure is a data structure that keeps track of a set of elements 
+partitioned into a number of disjoint (non-overlapping) subsets. 
+A union-find algorithm is an algorithm that performs two useful operations on such a data structure:
+
+Find: Determine which subset a particular element is in. 
+This can be used for determining if two elements are in the same subset.
+
+Union: Join two subsets into a single subset. Here first we have to check if the two subsets belong to same set. 
+If no, then we cannot perform union.
+
+
+The application is to check whether a given graph contains a cycle or not.
+
+Union-Find Algorithm can be used to check whether an undirected graph contains cycle or not. 
+This is another method based on Union-Find. This method assumes that the graph doesn’t contain any self-loops. 
+
+Note that the implementation of union() and find() is naive and takes O(n) time in the worst case. 
+These methods can be improved to O(Logn) using Union by Rank or Height. 
+Further optimazation can be achieved by using path compression which can result in almost O(1) time comnplexity.
