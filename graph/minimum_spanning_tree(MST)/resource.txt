@@ -34,5 +34,12 @@ Prim's algorithm :-
     3. Repeat the 2nd step till MST is complete.
         
 
-Kruskal's algorithm uses greedy algorithm, 
-    stores graph as edge list. DSU for detecting cycle and O(ElogV) complexity.
+Kruskal's algorithm :-
+    -Greedy algorithm
+    -stores graph as edge list. 
+    -DSU for detecting cycle and O(ElogV) complexity.
+
+    Algorithm :-
+    1. Sort all edges based on weight.
+    2. Pick the next smallest edge, add it to MST if it doesnot
+        form a cycle.(check uisng DSU)
