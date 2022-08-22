@@ -10,7 +10,7 @@ MST:- Given a connected, undirected and weighted graph G, select a subset of edg
 
     - Building roads for villages in minimum cost.
 
-
+    If there are V nodes, then there are V-1 edges in MST.
 
     - Popular algorithms:-
         - Prim's algorithm
