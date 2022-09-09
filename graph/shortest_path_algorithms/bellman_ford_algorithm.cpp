@@ -51,6 +51,35 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
+
+class Graph {
+    int n;
+    vector<vector>> edgeList;
+
+    public:
+        Graph(int n) { 
+            this->n = n;
+            edgelist.resize(n);
+        }
+
+        void addEdge(int x, int y, int w) {
+            edgeList.push_back({x, y, w});
+        }
+
+        void shortestPath(int src) {
+            vector<int> distance(n, INT_MAX);
+            distance[0] = 0;
+
+            for (int i = 0; i < n; i++) {
+                for (auto edge: edgeList) {
+                    if (distance[edge[1]] > distance[edge[0]]+edge[2]) {
+                        distance[edge[1]] = distance[edge[0]]+edge[2];
+                    }
+                }
+            }
+            
+        }
+};
  
 
 int main()
@@ -58,20 +87,9 @@ int main()
     fast_cin();
 
     #ifndef ONLINE_JUDGE
-    //    freopen("input.txt", "r", stdin);
-    //    freopen("output.txt", "w", stdout);
+       freopen("input.txt", "r", stdin);
+       freopen("output.txt", "w", stdout);
     #endif
-
-    int n = 100;
-
-    int count_digits = 0;
-
-    while (n>0) {
-        n = n/10;
-        count_digits++;
-    }
-
-    cout<<count_digits;
 
     return 0;
 }
