@@ -54,30 +54,42 @@ double eps = 1e-12;
 
 class Graph {
     int n;
-    vector<vector>> edgeList;
+    vector<vector<int>> edgeList;
 
     public:
         Graph(int n) { 
             this->n = n;
-            edgelist.resize(n);
         }
 
         void addEdge(int x, int y, int w) {
             edgeList.push_back({x, y, w});
         }
 
-        void shortestPath(int src) {
-            vector<int> distance(n, INT_MAX);
-            distance[0] = 0;
+        vector<int> shortestPath(int src) {
+            vector<int> distance(n+1, INT_MAX);
+            distance[src] = 0;
 
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < n - 1; i++) {
                 for (auto edge: edgeList) {
-                    if (distance[edge[1]] > distance[edge[0]]+edge[2]) {
-                        distance[edge[1]] = distance[edge[0]]+edge[2];
+                    int u = edge[0];
+                    int v = edge[1];
+                    int wt = edge[2];
+                    if (distance[u]!=INT_MAX and distance[v] > (distance[u] + wt)) {
+                        distance[v] = distance[u]+wt;
                     }
                 }
             }
-            
+
+            for (auto edge: edgeList) {
+                    int u = edge[0];
+                    int v = edge[1];
+                    int wt = edge[2];
+                    if (distance[u]!=INT_MAX && distance[v] > distance[u] + wt) {
+                        cout<<"negative edge cycle";
+                        exit(0);
+                    }
+                }
+            return distance;
         }
 };
  
@@ -87,9 +99,21 @@ int main()
     fast_cin();
 
     #ifndef ONLINE_JUDGE
-       freopen("input.txt", "r", stdin);
-       freopen("output.txt", "w", stdout);
+    //    freopen("input.txt", "r", stdin);
+    //    freopen("output.txt", "w", stdout);
     #endif
+
+    Graph g(4);
+    g.addEdge(0, 1, 4);
+    g.addEdge(1, 2, 3);
+    g.addEdge(1, 3, 2);
+    g.addEdge(3, 4, 3);
+
+    vector<int> distances = g.shortestPath(0);
+    for (int i = 0; i < distances.size(); i++) {
+        cout<<distances[i]<<" ";
+    }
+
 
     return 0;
 }

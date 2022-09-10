@@ -1,0 +1,4 @@
+Bellman ford Algorithm:
+    1) In it dist[vertices] = INT_MAX, dist[src] = 0
+    2) Relax all edges V-1 times 
+    3) Negative weight cycle detection
