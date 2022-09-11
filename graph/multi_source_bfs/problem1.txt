@@ -1,0 +1,8 @@
+There is a rectangular grid of size n*m.
+Each cll is either black(0) or white(1).
+But atleast one is white.
+Distance between two cells is equal to Manhattan distance between them.
+For each cell, find out distance to the nearest white cell.
+
+Manhattan distance (P1, P2) = |X1 - X2| + |Y1 - Y2|
+    where P1 = (X1, Y1) and P2 = (X2, Y2)
