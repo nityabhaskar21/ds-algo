@@ -15,7 +15,15 @@ int main() {
   // We will take maximum 12 characters as input
   cin.getline(profession, 12);
   
-  cout << "Your profession is: " << profession;
+  cout << "Your profession is: " << profession<<endl;
+
+
+
+  //Alternatively
+  string name; 
+  std::cout << "Enter your name :" << std::endl;  
+  getline(cin,name); // implementing a getline() function  
+  cout<<"Hello "<<name;  
   
   return 0;
 }
