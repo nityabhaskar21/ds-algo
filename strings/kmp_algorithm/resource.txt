@@ -1,0 +1,33 @@
+Knuth Morris Pratt Algorithm :- 
+
+KMP algorithm is used to find a "Pattern" in a "Text". 
+This algorithm campares character by character from left to right. 
+But whenever a mismatch occurs, 
+it uses a preprocessed table called "Prefix Table" i.e. LPS to skip characters comparison while matching.
+Time complexity - O(n + m)
+
+
+
+LPS :- 
+Prefix table (also known as LPS/ Longest Prefix Suffix) is an array data structure 
+which captures the longest prefix which is also a suffix for every substring starting at index 0.
+
+
+Optimal Algorithm for Prefix Table :-
+    1) Define one dimentional array with the size equal to the length of the pattern (LPS[pattern.length])
+
+    2) Define variables i and j and set LPS[0]=0.
+
+    3) compare the characters in the pattern at the pattern[i] and pattern[j].
+
+    4) If both the characters matches then set LPS[j]=i+1 and increment both i and j values by 1.
+        GOTO STEP 3
+
+    5) If both the characters do not match
+
+        check the value of i
+        if its '0' then set LPS[j]=0 and increment 'j' value by one
+        if its not '0' then set i=LPS[i-1].
+        GOTO STEP 3
+        Repeat Above steps untill all the characters of the pattern are traversed.
+
