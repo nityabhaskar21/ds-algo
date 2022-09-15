@@ -51,7 +51,7 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-
+// This only works for odd lenghts palindromes.
 string find_palindrome(string str) {
     int len = str.length();
     int startPalindromeIndex = 0;
