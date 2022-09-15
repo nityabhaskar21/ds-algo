@@ -1,0 +1,19 @@
+Manacher's algorithm is used to find the longest palindromic substring in any string. 
+It is required to solve sub-problems of some very hard problems. 
+The problem statement it solves is: Given a string 's' with the length of 'n'. 
+Find the longest palindromic substring in the given string. 
+A string is a palindrome when it is equal to the reverse of itself.
+
+Complexity of Manacher's algorithm
+Time complexity - O(N).
+
+
+Brute Force Approach
+The brute force / naive approach is slower than Manacher's algorithm, 
+but it is a good stepping stone for understanding the problem and Manacher's algorithm. 
+The Brute force approach is to check each substring of the given string 
+whether the substring is a palindrome or not.
+
+To implement the brute force approach, first, we will use a nested loop to get each substring, 
+and then nest another loop to check whether that substring is a palindrome or not.
+Time complexity - O(N^3)
