@@ -53,7 +53,41 @@ double eps = 1e-12;
 #define sz(x) ((ll)(x).size())
 
 string find_palindrome(string str) {
+    int len = str.length();
+    string updatedStr = "@";
+    for (int i = 0; i < len; i++) {
+        updatedStr += '#';
+        updatedStr += str[i];
+    }
+    updatedStr += '#';
+    updatedStr += '$';
+    cout<<updatedStr<<endl;
 
+    int updatedLen = updatedStr.length();
+
+    vector<int> lps(updatedLen, 0); //store the longest palindrome for each index as center.
+    int center = 0;
+    int start = 0;
+    int lengthPalindrome = 0;
+    int end = 0;
+    for (int i = 1; i < updatedLen - 1; i++) {
+        while (updatedStr[i-(lps[i] + 1)] == updatedStr[i+(lps[i] + 1)]) {
+            lps[i]++;
+        }
+        if (lps[i] > lengthPalindrome) {
+            lengthPalindrome = lps[i];
+            start = i - (lengthPalindrome - 1);
+            end = i + (lengthPalindrome - 1);
+        }
+    }
+
+    // for (int i = 0; i < lps.size(); i++) {
+    //     cout << lps[i] <<" ";
+    // }
+
+    int originalStrStart = (start - 2) / 2;
+    
+    return str.substr(originalStrStart, lengthPalindrome);
 }
  
 
