@@ -51,6 +51,7 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
+
 // This only works for odd lenghts palindromes.
 string find_palindrome(string str) {
     int len = str.length();
@@ -81,6 +82,51 @@ string find_palindrome(string str) {
     }
     return str.substr(startPalindromeIndex, lenPalindrome);
 }
+
+// This works for odd and even lenghts palindromes.
+string find_palindrome1(string s) {
+    int len = s.length();
+    
+    int  palindromeLen = 0;
+    int start = 0;
+    
+    for (int i = 0; i < len; i++) {
+        
+        //for odd length
+        int left = i-1;
+        int right = i+1;
+        int tempLength = 1;
+        
+        while ((left >=0 && right <len) && s[left] == s[right]) {
+            tempLength+=2;
+            left--;
+            right++;
+        }
+        
+        if (tempLength > palindromeLen) {
+            palindromeLen = tempLength;
+            start = left+1;
+        }
+        
+        //for even length
+        left = i;
+        right = i+1;
+        tempLength = 0;
+        while ((left >=0 && right <len) && s[left] == s[right]) {
+            tempLength+=2;
+            left--;
+            right++;
+        }
+        
+        if (tempLength > palindromeLen) {
+            palindromeLen = tempLength;
+            start = left+1;
+        }
+        
+    }
+    
+    return s.substr(start, palindromeLen);
+}
  
 
 int main()
@@ -94,7 +140,8 @@ int main()
 
     string str;
     cin >> str;
-    cout<<find_palindrome(str);
+    // cout<<find_palindrome(str);
+    cout<<find_palindrome1(str);
 
     return 0;
 }
