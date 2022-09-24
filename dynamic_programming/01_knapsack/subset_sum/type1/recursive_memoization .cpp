@@ -54,7 +54,7 @@ double eps = 1e-12;
 
 vector<vector<int>> v;
 //Recursive approach with memoization
-// Whether sum s is possible from subset of [.... i] (till i index of arr)
+// Whether sum s is possible from subset of [.... i] (till i index of arr)22
 int subset_sum(int s, int i, vector<int>& arr) {// sum, index, array
 
     if (i == -1) return (s==0);// This should come before checking v[i][s]!=-1, 
