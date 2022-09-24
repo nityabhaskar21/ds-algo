@@ -1,0 +1,12 @@
+Given an array of non-negative integers and an integer sum. 
+We have to tell whether there exists any subset in an array whose sum is equal to the given integer sum.
+
+Examples:
+
+Input:  sum = 7,  n = 6,  arr[] = {3, 34, 4, 12, 3, 2}
+Output: True
+Explanation: There is a subset (4, 3) with sum 7.
+
+Input:  sum = 10,  n = 6, arr[] = {2, 2, 2, 3, 2, 2}
+Output: True
+ 
