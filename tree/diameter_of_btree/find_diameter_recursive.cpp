@@ -51,9 +51,7 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
-
-// ACCEPTED
-
+ 
 struct Node {
     struct Node *left, *right;
     int data;
@@ -75,31 +73,23 @@ void print(Node *root) {
     print(root->right); 
 }
 
-v32 diameters;
-
-int childHeight(Node *root) {
-    if (root == NULL) return 0;
-    if (root->left == NULL && root->right == NULL) return 1;
-
-    int leftHeight = childHeight(root->left);
-    int rightHeight = childHeight(root->right);
-
-    int currDiameter = 0;
-    currDiameter = leftHeight + rightHeight + 1;
-    diameters.push_back(currDiameter);
-
-    return max(leftHeight+1, rightHeight+1);
+int diameterHelper(Node* root, int &result) {
+    if (root == nullptr) {
+        return 0;
+    }
+    int left = diameterHelper(root->left, result);
+    int right = diameterHelper(root->right, result);
+    
+    result = max(result, left+right+1);
+    return max(left, right)+1;
+    
 }
 
 int findDiameter(Node *root) {
-    if (root == NULL) return 0;
-    if (root->left == NULL && root->right == NULL) return 1;
-
-    childHeight(root);
-
-    return *max_element(diameters.begin(), diameters.end());
+    int result = 0;
+    diameterHelper(root, result);
+    return result;
 }
- 
 
 int main()
 {
@@ -136,19 +126,12 @@ int main()
             }
         }
         tmp->data = val;
-        // if (path[path.size()-1] == 'L') {
-        //     tmp->left = newNode(val); 
-        // } else if (path[path.size()-1] == 'R') {
-        //     tmp->right = newNode(val);
-        // }
         
         tmp=root;
     }
 
     // print(root);
     cout<<findDiameter(root) ;
-    // delete root;
-    // delete tmp;
 
     return 0;
 }
