@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     queue<int> q;
-
+    // FIFO
     // push()	inserts an element at the back of the queue
     // pop()	removes an element from the front of the queue
     // front()	returns the first element of the queue
