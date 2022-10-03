@@ -52,8 +52,23 @@ double eps = 1e-12;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-int coin_change(vector<int> coins, int sum) {
-    
+int coin_change(vector<int>& coins, int amount) {
+    vector<int> v(amount+1, amount+1);
+    v[0] = 0;
+    int n = coins.size();
+
+    for (int i = 1; i <=amount; i++) {
+        for (int j = 0; j < n; j++) {
+            if (coins[j] <= i) {
+                v[i] = min(v[i], 1+v[i-coins[j]]);
+            }
+        }
+    }
+    if (v[amount]<=amount) {
+        return v[amount];
+    } else {
+        return -1;
+    }
 }
 
 int main()
