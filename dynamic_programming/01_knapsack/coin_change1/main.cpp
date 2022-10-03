@@ -60,7 +60,7 @@ int coin_change(vector<int> & coins, int sum) {
     for (int i = 1; i <= sum; i++) {
         for (int j = 0; j < n; j++) {
             if (coins[j]<=i) {
-                v[i] = v[i] + v[i-coins[j]];
+                v[i] = (v[i] + v[i-coins[j]]) % MOD_INT ;
             }
         }
     }

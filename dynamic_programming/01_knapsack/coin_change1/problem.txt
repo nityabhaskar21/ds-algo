@@ -24,8 +24,9 @@ Print one integer: the number of ways modulo 10^9+7.
 
 Constraints
 1≤n≤100
-1≤x≤106
-1≤ci≤106
+1≤x≤10^6
+1≤ci≤10^6
+
 Example
 
 Input:
