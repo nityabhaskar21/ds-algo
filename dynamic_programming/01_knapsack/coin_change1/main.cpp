@@ -51,7 +51,22 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
- 
+
+int coin_change(vector<int> & coins, int sum) {
+    vector<int> v(sum+1, 0);
+    v[0] = 1;
+    int n = coins.size();
+
+    for (int i = 1; i <= sum; i++) {
+        for (int j = 0; j < n; j++) {
+            if (coins[j]<=i) {
+                v[i] = v[i] + v[i-coins[j]];
+            }
+        }
+    }
+
+    return v[sum];
+}
 
 int main()
 {
@@ -62,7 +77,17 @@ int main()
     //    freopen("output.txt", "w", stdout);
     #endif
 
-    
+    int n = 0;
+    int sum = 0;
+    cin>>n>>sum;
+
+    vector<int> coins(n);
+
+    for (int i = 0; i < n; i++) {
+        cin>>coins[i];
+    }
+
+    cout<<coin_change(coins, sum);
 
     return 0;
 }
