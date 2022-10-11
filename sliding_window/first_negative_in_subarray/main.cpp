@@ -51,7 +51,38 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
- 
+
+vector<int> first_negative(vector<int> arr, int k) {
+    queue<int> q;
+    vector<int> negArr;
+
+    int i = 0, j = 0;
+
+    int n = arr.size();
+
+    while (j<n) {
+        if (arr[j] < 0) {
+            q.push(arr[j]);
+        }
+
+        if (j-i+1<k) {
+            j++;
+        } else if (j-i+1==k) {
+            if (q.empty()) {
+                negArr.push_back(0);
+            } else {
+                negArr.push_back(q.front());
+            }
+     
+            if (arr[i] == q.front()) {
+                q.pop();
+            }
+            i++;
+            j++;
+        }
+    }
+    return negArr;
+}
 
 int main()
 {
@@ -61,6 +92,21 @@ int main()
        freopen("input.txt", "r", stdin);
     //    freopen("output.txt", "w", stdout);
     #endif
+
+    int n, k;
+    cin>>n>>k;
+
+    vector<int> in(n);
+
+    for (int i = 0; i < n; i++) {
+        cin>>in[i];
+    }
+    
+    vector<int> result = first_negative(in, k);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout<<result[i]<<" ";
+    }
 
     return 0;
 }

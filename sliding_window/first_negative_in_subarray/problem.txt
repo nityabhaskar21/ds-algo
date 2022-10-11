@@ -21,3 +21,8 @@ First negative integer for each window of size k
 Input format:
 n k
 array elements
+
+Constraints:
+1 <= N <= 10^5
+-10^5 <= A[i] <= 10^5
+1 <= K <= N
