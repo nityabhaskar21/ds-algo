@@ -51,22 +51,28 @@ double eps = 1e-12;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
- 
+// WORKING 
 int no_anagrams(string txt, string pat) {
-    int k = pat.size();
-    int n = txt.size();
+    int k = pat.length();
+    int n = txt.length();
 
     int total = 0, count = 0;
 
-    unordered_map<char, int> mp;
+    map<char, int> mp;
     int i = 0, j = 0;
 
-    for (int i = 0; i < k; i++) {
-        mp[pat[i]]++;
+    for (int l = 0; l < k; l++) {
+        mp[pat[l]]++;
     }
+    // for (auto it:mp) {
+    //     cout<<it.first<<":"<<it.second<<", ";
+    // }cout<<endl;
     count = mp.size();
 
     while (j<n) {
+        // for (auto it:mp) {
+        //     cout<<it.first<<":"<<it.second<<", ";
+        // }cout<<endl;
         if (mp.find(txt[j])!=mp.end()) {
             mp[txt[j]]--;
             if (mp[txt[j]]==0) {
@@ -82,7 +88,7 @@ int no_anagrams(string txt, string pat) {
             }
             if (mp.find(txt[i])!=mp.end()) {
                 mp[txt[i]]++;
-                if (mp[txt[j]]==1) {
+                if (mp[txt[i]]==1) {
                     count++;
                 }
             }

@@ -1,6 +1,8 @@
 Given a word pattern and a text txt. 
 Return the count of the occurences of anagrams of the word in the text.
 
+https://practice.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1
+
 Example 1:
 
 Input:
