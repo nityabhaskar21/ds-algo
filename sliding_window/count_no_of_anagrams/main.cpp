@@ -52,6 +52,46 @@ double eps = 1e-12;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
  
+int no_anagrams(string txt, string pat) {
+    int k = pat.size();
+    int n = txt.size();
+
+    int total = 0, count = 0;
+
+    unordered_map<char, int> mp;
+    int i = 0, j = 0;
+
+    for (int i = 0; i < k; i++) {
+        mp[pat[i]]++;
+    }
+    count = mp.size();
+
+    while (j<n) {
+        if (mp.find(txt[j])!=mp.end()) {
+            mp[txt[j]]--;
+            if (mp[txt[j]]==0) {
+                count--;
+            }
+        }
+
+        if (j-i+1<k) {
+            j++;
+        } else if (j-i+1==k) {
+            if (count==0) {
+                total++;
+            }
+            if (mp.find(txt[i])!=mp.end()) {
+                mp[txt[i]]++;
+                if (mp[txt[j]]==1) {
+                    count++;
+                }
+            }
+            i++;
+            j++;
+        }
+    }
+    return total;
+}
 
 int main()
 {
@@ -61,6 +101,10 @@ int main()
        freopen("input.txt", "r", stdin);
     //    freopen("output.txt", "w", stdout);
     #endif
+    string txt, pat;
+    cin >> txt >> pat;
+
+    cout<<no_anagrams(txt, pat);
 
     return 0;
 }
