@@ -1,0 +1,68 @@
+The Functions Defined in the Header ctype.h
+
+isalnum: This function returns a non-zero number if the argument is an alphabet('a' - 'z' or 'A' - 'Z') or a number('0' - '9'). 
+It returns zero in all other cases.
+Syntax:
+int isalnum(int c);
+
+
+isalpha: This function returns a non-zero number if the argument is an alphabet('a' - 'z' or 'A' - 'Z') and zero otherwise.
+Syntax:
+int isalpha(int c);
+
+
+iscntrl: This function returns a non-zero number if the argument is a control character and zero otherwise.
+Syntax:
+int iscntrl(int c);
+
+
+isdigit: This function returns a non-zero number if the argument is a numeric character('0' - '9') and zero otherwise.
+Syntax:
+int isdigit(int c);
+
+
+isgraph: This function returns a non-zero number if the argument is a graphic character and zero otherwise.
+Syntax:
+int isgraph(int c);
+
+
+islower: This function returns a non-zero number if the argument is a lowercase alphabet character('a' - 'z') and zero otherwise.
+Syntax:
+int islower(int c);
+
+
+isprint: This function returns a non-zero number if the argument is a printable character and zero otherwise.
+Syntax:
+int isprint(int c);
+
+
+ispunct: This function returns a non-zero number if the argument is a punctuation character and zero otherwise.
+Syntax:
+int ispunct(int c);
+
+
+isspace: This function returns a non-zero number if the argument belongs to the space character class and zero otherwise.
+Syntax:
+int isspace(int c);
+
+
+isupper: This function returns a non-zero number if the argument is an uppercase alphabet character('A' - 'Z') and zero otherwise.
+Syntax:
+int isupper(int c);
+
+
+isxdigit: This function returns a non-zero number if the argument is a hexadecimal character and zero otherwise.
+Syntax:
+int isxdigit(int c);
+
+
+tolower: If the argument is an uppercase alphabet, the function converts it into a lowercase alphabet. 
+Else, it returns the same character.
+Syntax:
+int tolower(int c);
+
+
+toupper: If the argument is a lowercase alphabet, the function converts it into an uppercase alphabet. 
+Else, it returns the same character.
+Syntax:
+int toupper(int c);

@@ -1,0 +1,33 @@
+The ctype header file in C defines various functions to classify and transform characters. 
+These functions take an integer(ASCII value of the character) as an input. \
+If the input is not an integer, it is typecasted internally in the function.
+
+Character Classes
+A character class is a set of characters belonging to some type. In this section, we will see the various character sets present in C.
+
+Digits: It is the set of numeric characters, i.e.,{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}.
+
+Hexadecimal digits: It is the set of hexadecimal digits {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F}. 
+The hexadecimal number system is the type of number system which has a base of 16.
+
+Lowercase letters: It is the set of lowercase alphabets {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z}.
+
+Uppercase letters: It is the set of uppercase alphabets {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z}.
+
+Letters: It is the set of all alphabets, uppercase, and lowercase.
+
+Alphanumeric characters: It is the set of all alphabets(uppercase and lowercase) and digits.
+
+Punctuation characters: It is the set of all punctuation characters ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ | ~ {}
+
+Graphical characters: It is the set of all characters with a graphical representation. 
+This includes letters, digits, and punctuation characters.
+
+
+Character	Description
+' '	        space
+'\n'	    newline
+'\t'	    horizontal tab
+'\v'	    vertical tab
+'\f'	    form feed
+'\r'	    Carriage return
