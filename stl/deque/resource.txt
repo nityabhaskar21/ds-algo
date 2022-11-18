@@ -13,3 +13,15 @@ TIME COMPLEXITY:
 Random access - constant O(1)
 Insertion or removal of elements at the end or beginning - constant O(1)
 Insertion or removal of elements - linear O(n)
+
+
+Methods	        Description
+push_back()	    inserts element at the back
+push_front()	inserts element at the front
+pop_back()	    removes element from the back
+pop_front()	    removes element from the front
+front()	        returns the element at the front
+back()	        returns the element at the back
+at()	        sets/returns the element at specified index
+size()	        returns the number of elements
+empty()	        returns true if the deque is empty
