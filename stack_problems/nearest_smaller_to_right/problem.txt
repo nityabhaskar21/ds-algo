@@ -1,0 +1,18 @@
+Given an array, print the Next Smaller to Right Element (NSR) for every element. 
+The Next smaller Element to right for an element x is the first smaller element 
+on the right side of x in array. Elements for which no smaller element exist, 
+consider next greater element as -1.
+
+Example:
+Input: arr[] = [ 4 , 5 , 2 , 25 ]
+Output:        4      –>   2
+               5      –>   2
+               2      –>  -1
+               25     –>  -1
+
+
+Input: arr[] = [ 13 , 7, 6 , 3 ]
+Output:         13      –>     7
+                7       –>     6
+                6       –>     3
+                3       –>    -1
