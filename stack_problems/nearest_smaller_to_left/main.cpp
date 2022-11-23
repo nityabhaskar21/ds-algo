@@ -67,7 +67,7 @@ vector<int> nearest_smaller_left(vector<int> &v) {
         }
 
         else if (stk.top() >= v[i]) {
-            while (stk.top() >= v[i] && !stk.empty()) {
+            while (!stk.empty() && stk.top() >= v[i]) {
                 stk.pop();
             }
             if (stk.empty()) {
@@ -97,9 +97,9 @@ int main()
     vector<int> v(n);
     for(int i=0; i<n; i++) {
         cin>>v[i];
-        cout<<v[i]<<" ";
+        // cout<<v[i]<<" ";
     }
-    cout<<endl;
+    // cout<<endl;
 
 
     vector<int> result = nearest_smaller_left(v);

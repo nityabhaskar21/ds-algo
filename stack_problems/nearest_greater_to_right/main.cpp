@@ -67,7 +67,7 @@ vector<int> nge(vector<int> &v) {
         }
 
         else if (stk.top() <= v[i]) {
-            while (stk.top() <= v[i] && !stk.empty()) {
+            while (!stk.empty() && stk.top() <= v[i]) {
                 stk.pop();
             }
             if (stk.empty()) {
