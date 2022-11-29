@@ -1,0 +1,9 @@
+Similar to pair, tuple template has its own member and non-member functions, few of which are listed below :
+
+A Constructor                               to construct a new tuple
+Operator = :                                to assign value to a tuple
+swap :                                      to swap value of two tuples
+make_tuple() :                              creates and return a tuple having elements described by the parameter list.
+Operators( == , != , > , < , <= , >= ) :    lexicographically compares two pairs.
+Tuple_element :                             returns the type of tuple element
+Tie :                                       Tie values of a tuple to its refrences.
