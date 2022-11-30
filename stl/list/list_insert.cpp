@@ -16,9 +16,12 @@ int main()
 
     list<int> l = {1,2,3,4,5};
     list<int>::iterator it = l.begin();           
-    
-    l.insert (it+1, 100);    // insert 100 before 2 position
+    advance(it, 1); //Since it is a Bidirectional iterator, we can't use it= it+1;
+    l.insert (it, 100);    // insert 100 before 2 position
     /* now the list is 1 100 2 3 4 5 */
+    for (int x : l) {
+		std::cout << x << ' ';
+	}cout << std::endl;
     
     list<int> new_l = {10,20,30,40};   // new list
     
@@ -31,6 +34,10 @@ int main()
     
     l.insert(l.begin(), 5, 10);  // insert 10 before beginning 5 times
     /* now l is 10 10 10 10 10 1 100 2 3 4 5 */
+
+    for (int x : l) {
+		std::cout << x << ' ';
+	}cout << std::endl;
     
     return 0;
 }

@@ -18,5 +18,5 @@ int main()
     /* now the list becomes 5,4,3,2,1 */
     for (int x : l) {
 		std::cout << x << ' ';
-	}cout << std::endl;
+	  }cout << std::endl;
 }
