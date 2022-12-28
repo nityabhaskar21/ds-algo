@@ -2,6 +2,7 @@ Set is a standard template library (STL) container in C++,
 used in programming whenever we need to store unique elements (no duplicate values) 
 and stored in a specifically sorted manner. The elements inside the set can be inserted or removed, 
 but when inserted once, they cannot be modified.
+Internally the set STL in C++ is implemented by the binary search tree(Red-Black Tree).
 
 Generally, The time complexity of operations like insert, erase, find and count in the set in C++ is O(logn).
 

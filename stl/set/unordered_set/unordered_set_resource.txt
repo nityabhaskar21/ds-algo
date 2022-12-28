@@ -1,0 +1,28 @@
+Unordered set in C++ is a container data structure used to store elements in no particular order.
+The unordered set in C++ is implemented using a hash table. 
+So, whenever we enter an element into our unordered set, 
+it passes through a hash function to generate a hash key where it is then stored in the hash table. 
+As this hash key depends on the function and is a randomized process, 
+that is why the unordered set C++ stores elements randomly, and in no particular order.
+
+complexity of the unordered set depends on the underlying hash function. 
+In average cases, all operations on an unordered set in C++ take O(1) constant time, 
+but they make take O(n) time in the worst case, though this worst case is very rare.
+
+Method Name	    Description		                                                                 Time complexity
+insert()	    It is used to insert a new element into the unordered set.		                 O(1)
+begin()	        It returns an iterator to the first element of the unordered set.		         O(1)
+end()	        It returns an iterator to the end of the unordered set. 
+                This points to the position after the ending element of the unordered set.	     O(1)
+count()	        It is used to find if an element exists in the unordered set. 
+                    It returns 1 if the element is present and 0 otherwise.		                 O(1)
+size()	        It is used to return the size of the unordered set or the 
+                    number of unique elements that have been inserted in it so far.		         O(1)
+find()	        It is used to find and return the iterator pointing to a 
+                    particular value in the unordered set. If the specified element is 
+                    not found, it returns an iterator to the end of the unordered set.		     O(1)
+empty()	        It is used to return if the unordered set is empty or not. 
+                    It returns 1 if the unordered set is empty and 0 otherwise.		             O(1)
+erase()	        Used to erase a particular element or a range of elements 
+                    from the unordered set using iterators.	                                     O(no. of elements removed)
+clear()	        It is used to completely empty the unordered set.		                         O(n)
