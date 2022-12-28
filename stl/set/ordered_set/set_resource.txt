@@ -1,0 +1,36 @@
+Set is a standard template library (STL) container in C++, 
+used in programming whenever we need to store unique elements (no duplicate values) 
+and stored in a specifically sorted manner. The elements inside the set can be inserted or removed, 
+but when inserted once, they cannot be modified.
+
+Generally, The time complexity of operations like insert, erase, find and count in the set in C++ is O(logn).
+
+By default, the set stores the elements in ascending order, 
+but if you want the elements to be sorted in descending order, 
+you’ll need to write greater<datatype> along with the data type.
+
+Syntax:
+set<datatype, greater<datatype>> name_of_set;
+
+
+Set STL Function	Work	                                                                            Time Complexity
+begin()	            Returns the iterator pointing to the first element of the set	                        O(1)
+end()	            Returns the pointer to the location which is next to the last element of the set.	    O(1)
+rbegin()	        Returns the reverse iterator pointing to the last element	                            O(1)
+rend()	            Returns the reverse iterator pointing to the location before the first element	        O(1)
+size()	            Returns the size/number of element of the set	                                        O(1)
+empty()	            Checks if the set is empty or not	                                                    O(1)
+max_size()	        Returns the maximum allowed size/length of the set	                                    O(1)
+insert()	        Insert the specified element in the set	                                                O(logN)
+erase(position)	    Removes the element from the specified address from the set	                            O(1)
+erase(value)	    Removes the specified element from the set	                                            O(logN)
+erase(first, last)	Removes the specified range of elements from the set	                                O(N)
+clear()	            Deletes/clears all the elements from the set.	                                        O(N)
+emplace()	        Works similar to the insert() function. It is used to insert elements to the set	    O(logN)
+swap()	            Swaps the elements of the two sets	                                                    constant
+find()	            Returns the iterator to the element specified if found,                                 O(logN)
+                        else return the iterator to the end of the set	
+count()	            Returns 1 if the specified element is found, else 0	                                    O(logN)
+lower_bound()	    Returns the iterator to the specified element if it is found,                           O(logN)
+                        else return the just greater next element.	
+upper_bound()	    Returns the iterator to the very next element of the specified element	                O(logN)
