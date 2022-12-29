@@ -3,33 +3,29 @@
 
 using namespace std;
 
-vector<vector<int>> printsubsets(int i, vector<int>& arr, vector<vector<int>>& result) {
-    if (i==arr.size()) {
-        vector<int> empty;
-        result.push_back(empty);
-        return result;
+vector<vector<int>> printsubsets(int i, vector<int>& arr) {
+    if (i>=arr.size()) {
+        return {{}};    //vector of vectors 
     }
     
-    vector<vector<int>> resultFromChild = printsubsets(i+1, arr, result);
-    // if (i==arr.size()-1) {
-    //     vector<int> v = {arr[i]};
-    //     resultFromChild.push_back(v);
-    //     return resultFromChild;
-    // }
+    vector<vector<int>> resultFromChild = printsubsets(i+1, arr);
+    vector<vector<int>> ans = {};
+
     int n = resultFromChild.size();
-    result.insert(resultFromChild.begin(), resultFromChild.end());
-    for (int j = 0; i < n; i++) {
-        resultFromChild[j].push_back(arr[i]);
+    ans.insert(ans.end(), resultFromChild.begin(), resultFromChild.end());
+
+    for (vector<int> x: resultFromChild) {
+        x.push_back(arr[i]);
+        ans.push_back(x);
     }
-    return resultFromChild;
+    return ans;
 
 }
 
 int main() {
     vector<int> arr = {5, 2, 4};
-    vector<vector<int>> result;
 
-    result = printsubsets(0, arr, result);
+    auto result = printsubsets(0, arr);
 
     for (int i = 0; i < result.size(); i++) {
         for (int j = 0; j < result[i].size(); j++) {
