@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//https://www.youtube.com/watch?v=0N3RCWa8jFM&ab_channel=LeadCodingbyFRAZ
+
 vector<vector<int>> printsubsets(int i, vector<int>& arr) {
     if (i>=arr.size()) {
         return {{}};    //vector of vectors 
