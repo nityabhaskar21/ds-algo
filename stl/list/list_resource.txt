@@ -12,13 +12,14 @@ Here are the common std::list functions:
 Function	        Description
 insert()	        This function inserts a new item before the position the iterator points.
 push_back()	        This functions add a new item at the list’s end.
-push_front()	    It adds a new item at the list’s front.
+push_front()	        It adds a new item at the list’s front.
 pop_front()	        It deletes the list’s first item.
-size()	            This function determines the number of list elements.
-front()	            To determines the list’s first items.
-back()	            To determines the list’s last item.
+pop_back()	        It deletes the list’s last item.
+size()	                This function determines the number of list elements.
+front()	                To determines the list’s first items.
+back()	                To determines the list’s last item.
 reverse()	        It reverses the list items.
-merge()	            It merges two sorted lists.
+merge()	                It merges two sorted lists.
 
 
 Differences between list and deque:-
