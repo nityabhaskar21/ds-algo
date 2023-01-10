@@ -5,20 +5,15 @@
  
 typedef std::pair<int, int> pair;
 
-//Sorting Vector of Pairs by 1st element in ascending and 2nd element in descending
+//sort a vector-of-pairs based on the second element of the pair
 bool fn(const pair &x, const pair &y)
-{   
-    if (x.first!=y.first) {
-         return x.first < y.first;
-    } else {
-        return x.second > y.second;
-    }
-    
+{
+    return x.second < y.second;
 }
  
 int main()
 {
-    std::vector<pair> v = { { 1, 2 }, { 6, 4 }, { 1, 4 }, { 4, 1 } };
+    std::vector<pair> v = { { 1, 2 }, { 6, 4 }, { 3, 4 }, { 4, 1 } };
  
     std::sort(v.begin(), v.end(), fn);
  
