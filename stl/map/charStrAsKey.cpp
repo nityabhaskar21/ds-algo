@@ -12,7 +12,8 @@ string getKey(string str) {
     
     string key = "";
     for (int i = 0; i < 26; i++) {
-        key.append(to_string(count[i]));
+        key.append(to_string(count[i])+'a');    //Simply using count[i] could give some clashes
+        // example "bdddddddddd","bbbbbbbbbbc"
     }
     return key;
 }
