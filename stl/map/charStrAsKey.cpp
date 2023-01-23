@@ -12,7 +12,7 @@ string getKey(string str) {
     
     string key = "";
     for (int i = 0; i < 26; i++) {
-        key.append(to_string(count[i])+'a');    //Simply using count[i] could give some clashes
+        key.append(to_string(count[i]+'a'));    //Simply using count[i] could give some clashes
         // example "bdddddddddd","bbbbbbbbbbc"
     }
     return key;
@@ -31,9 +31,9 @@ int main() {
         cout<<ele.first<<" "<<ele.second<<endl;
     }
 
-    // 20001000000000000000000000 1
-    // 00011100000000000000000000 1
-    // 11100000000000000000000000 2
+    // 9997979798979797979797979797979797979797979797979797 1
+    // 9797979898989797979797979797979797979797979797979797 1
+    // 9898989797979797979797979797979797979797979797979797 2
     
 
     return 0;
