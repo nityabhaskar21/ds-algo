@@ -19,7 +19,7 @@ string getKey(string str) {
 
 int main() {
     unordered_map<string, int> m;
-    vector<string> strs = {"abc", "def", "fgh", "aae"};
+    vector<string> strs = {"abc", "def", "bca", "aae"};
 
     for (int i = 0; i < strs.size(); i++) {
         string key = getKey(strs[i]);
@@ -31,9 +31,8 @@ int main() {
     }
 
     // 20001000000000000000000000 1
-    // 00000111000000000000000000 1
     // 00011100000000000000000000 1
-    // 11100000000000000000000000 1
+    // 11100000000000000000000000 2
     
 
     return 0;
