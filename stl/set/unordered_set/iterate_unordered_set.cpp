@@ -23,6 +23,12 @@ int main() {
         advance(itr, 1);
 	    
 	}
+
+	//OR
+	cout<<endl;
+	for (auto &n:s1) {
+		cout<<n<<" ";
+	}
 	
 	return 0;
 }
