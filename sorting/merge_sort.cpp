@@ -55,8 +55,8 @@ double eps = 1e-12;
 
 void merge_array(int *A, int s, int e) {
     int mid=s+(e-s)/2;
-    int l1=mid-s;
-    int l2=e-mid+1;
+    int l1=mid-s+1;
+    int l2=e-mid;
 
     vector<int> first(l1);
     vector<int> second(l2);
@@ -64,11 +64,11 @@ void merge_array(int *A, int s, int e) {
     int mainArrayIndex=s;
 
     for (int i=0; i<l1; i++) {
-        first[i++]=A[mainArrayIndex++];
+    first[i]=A[mainArrayIndex++];
     }
 
     for (int i=0; i<l2; i++) {
-        second[i++]=A[mainArrayIndex++];
+    second[i]=A[mainArrayIndex++];
     }
 
     int index1=0, index2=0;
@@ -89,17 +89,20 @@ void merge_array(int *A, int s, int e) {
     while (index2<l2) {
         A[mainArrayIndex++]=second[index2++];
     }
+
 }
 
-void merge_sort(int *A, int s, int e) {
-    if (s>=e) return;
+  void merge_sort(int *A, int s, int e) {
+    if (s>=e) {
+        return;
+    }
     int mid=s+(e-s)/2;
 
     //merge left half
-    merge_sort(A, s, mid-1);
+    merge_sort(A, s, mid);
 
     //merge right half
-    merge_sort(A, mid, e);
+    merge_sort(A, mid+1, e);
 
     //Merge two arrays
     merge_array(A, s, e);
@@ -122,7 +125,7 @@ int main()
         cout << A[ i ] <<" ";
     }
 
-    // merge_sort(A, 0, n-1);
+    merge_sort(A, 0, n-1);
 
     cout<<"\nAfter Sorting: ";
     for (int i = 0; i < sizeof(A)/sizeof(A[0]); i++) {
