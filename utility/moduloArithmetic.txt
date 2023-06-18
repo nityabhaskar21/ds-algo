@@ -13,3 +13,5 @@
 // https://planetcalc.com/3311/
 Example:
 x/2 % (10e9+7) = ((x % (10e9+7)) * (500000004 % (10e9+7))) % (10e9+7)
+
+https://www.youtube.com/watch?v=QEyhFzawMFw&list=PLk_DdB3uhk2AQalRT2sFhEtatiwaik_YJ&index=3&ab_channel=codeExplainer
